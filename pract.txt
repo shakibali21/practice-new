@@ -1,0 +1,110 @@
+# practice-new
+
+
+
+Setting up basic commands. Initialise the new gate repository in a directory. Create a new file and add it to the staging area.
+cd ~
+mkdir GitExperiment1
+cd GitExperiment1
+git init
+echo "Hello Git" > sample.txt
+git status
+git add sample.txt
+git status
+git commit -m "Initial Commit"
+git log
+git status
+
+
+
+Creating and managing branches Create a new branch named feature branch Switch to the master branch merge the feature branch into master.
+cd ~
+mkdir GitExperiment2
+cd GitExperiment2
+git init
+echo "Git Experiment" > file1.txt
+git add file1.txt
+git commit -m "Initial commit"
+git branch feature-branch
+git checkout feature-branch
+echo "This is a feature branch." > feature.txt
+git add feature.txt
+git commit -m "Added feature.txt in feature-branch"
+git checkout master
+git merge feature-branch
+git log --oneline
+
+
+Write the commands to stash your changes Switch branches and then apply the stashed changes.
+cd ~
+mkdir shakib
+cd shakib
+git init
+echo "Hello Git" > file.txt
+git add file.txt
+git commit -m "Initial commit"
+git branch feature-branch
+git switch feature-branch
+echo "This my feature work" > feature.txt
+git add feature.txt
+git status
+git stash
+git stash list
+git switch master
+git switch feature-branch
+git stash apply
+
+
+4.Collaboration and remote repositories clone a remote gate repository to your local machine.
+cd ~
+cd Shakib
+git remote -v
+ls
+cat student-details.txt
+echo "Name: Shakib Ali" > student-details.txt
+echo "USN: 1AI25CS078" >> student-details.txt
+echo "YEAR: 2nd YEAR" >> student-details.txt
+echo "Section:B SECTION" >> student-details.txt
+ls
+cat student-details.txt
+git add student-details.txt
+git commit -m "commited"
+
+
+5. Fetch the latest changes from remote repository and rebase your local branch.
+cd ~
+cd Git-Experiment-5
+git remote -v
+ls
+cat Courses.txt
+git branch feature-branch
+git switch feature-branch
+echo "this is my local work" > local.txt
+git add local.txt
+git commit -m "Added local work"
+git fetch origin
+git log origin/main --oneline
+git log -p -n 1 origin/main
+git rebase origin/main
+git log --oneline --graph --all
+git status
+
+
+
+6. Write the command to merge feature branch into master while providing a custom commit message for the merge.
+
+cd ~
+mkdir GitExperiment6
+cd GitExperiment6
+git init
+echo "Initial content" > file.txt
+git add file.txt
+git commit -m "Initial commit"
+git branch feature-branch
+git switch feature-branch
+echo "Feature branch content" > feature.txt
+git add feature.txt
+git commit -m "Added feature content"
+git switch master
+git merge --no-ff feature-branch -m "Merged feature branch into master"
+git log --oneline --graph --all
